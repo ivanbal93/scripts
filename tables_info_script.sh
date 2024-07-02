@@ -10,6 +10,14 @@ mysql -u root -p -t -e \
     ,   DATE_FORMAT(UPDATE_TIME, '%d.%m.%Y') AS update_time
     FROM 
         INFORMATION_SCHEMA.TABLES
+    WHERE 
+        TABLE_SCHEMA NOT IN (
+            'information_schema'
+        ,   'mysql'
+        ,   'performance_schema'
+        ,   'sys'
+        ,   'phpmyadmin'
+        )
     ORDER BY
         1, 3, 2
     ;"
