@@ -1,6 +1,10 @@
 #!/bin/bash
 
 #  get information only about creating and updating dates of db
+# uncomment the last line if you need to create a file
+
+today=$(date "+%Y-%m-%d")
+filename="db_info_$today.mt"
 
 mysql -u root -p -t -e \
     "SELECT
@@ -20,4 +24,5 @@ mysql -u root -p -t -e \
     GROUP BY 1
     ORDER BY
         2, 3
-    ;"
+    ;" \
+    # > $filename
