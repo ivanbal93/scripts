@@ -54,12 +54,10 @@ with open("containers_info.json", "w", encoding="utf-8") as file:
                                 + logs_amount
                                 + logs_duration,
                                 universal_newlines=True
-                            ).split("\n")],
-                        "database": []
+                            ).split("\n")]
                     }
             },
             file,
             indent=4
         )
         file.write("," + "\n")
-

@@ -19,5 +19,5 @@ mysql -u root -p -t -e \
         )
     GROUP BY 1
     ORDER BY
-        1, 2
+        2, 3
     ;"
